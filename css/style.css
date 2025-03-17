@@ -1,0 +1,109 @@
+@layer reset, layout, components;
+
+@import url('layout.css') layer(layout);
+@import url('normalize.css') layer(reset);
+@import url('components/box.css') layer(components);
+
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+  color-scheme: light dark;
+  --color-primary: light-dark(#8839ef, #cba6f7);
+  --color-secondary: light-dark(#dce0e8, #11111b);
+  --color-gray: light-dark(#9ca0b0, #6c7086);
+  --background: light-dark(#dce0e8, #11111b);
+  --click-spark-color: light-dark(#1e1e2e, #45475a);
+
+  --red: light-dark(#d20f39, #f38ba8);
+  --green: light-dark(#40a02b, #a6e3a1);
+  --blue: light-dark(#1e66f5, #89b4fa);
+  --mantle: light-dark(#e6e9ef, #181825);
+  --base: light-dark(#eff1f5, #1e1e2e);
+}
+
+html {
+  font-family: Saira Condensed, serif;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.small {
+  font-size: 0.8em;
+  margin: 0.5em;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.no-bottom-margin {
+  margin-bottom: 0;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: .7s ease;
+}
+
+a {
+  font-weight: 700;
+  text-decoration: none;
+}
+.link {
+  color: var(--color-primary);
+}
+
+body {
+    background-color: var(--background);
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: .25rem;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+@media (max-width: 800px) {
+    main {
+        grid-template-columns: auto;
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 1500px) {
+    main {
+        max-width: 800px;
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 1500px) {
+    main {
+        max-width: 1400px;
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+.span-4-columns {
+    grid-column: span 4;
+  }
+  
+.span-4-rows {
+    grid-row: span 4;
+  }
+
+.span-2-columns {
+    grid-column: span 2;
+  }
+  
+.span-2-rows {
+    grid-row: span 2;
+  }
