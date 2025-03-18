@@ -1,84 +1,61 @@
 .box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    padding: 1em;
-    background-color: var(--mantle);
-    border: 2px solid;
-    border-color: var(--background);
-    transition: background-color 2s ease;
-    transition: 0.5s ease;
-    border-radius: 16px;
-    margin: .5em;
-    /* margin-top: 1em;
-    margin-bottom: 1em; */
-    &:hover {
-      border-color: var(--color-primary);
-    }
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: space-between;
+  padding: 1em;
+  background-color: var(--mantle);
+  border: 2px solid;
+  border-color: var(--background);
+  transition: background-color 2s ease;
+  transition: 0.5s ease;
+  border-radius: 16px;
+  margin: .25em;
+
+  &:hover {
+    border-color: var(--color-primary);
   }
-  
-  p {
-    max-width: 75ch;
-    font-size: 1.2rem;
+}
+
+.box__options {
+  display: flex;
+  justify-content: space-around;
+  text-decoration: none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.box__options a {
+  display: block;
+  text-decoration: none;
+  color: var(--color-primary);
+  background-color: var(--base);
+  padding: 1em 2em;
+  border-radius: 12px;
+  margin: 0em .2em;
+  transition: 0.5s ease;
+}
+
+.box__options a:hover {
+  background-color: var(--color-primary);
+  color: var(--base);
+}
+
+@media (max-width: 768px) {
+  .box {
+    margin: 1em;
+    margin-bottom: 0;
   }
-  
-  
+
   .box__options {
-    list-style: none;
-    display: flex;
-    padding: 0;
-    margin: .5em;
+    flex-direction: column;
+    align-items: stretch;
   }
-  
-  .box__options li {
-    margin: .5em;
-  }
-  
+
   .box__options a {
-    display: flex;
-    justify-content: center;
     text-align: center;
-    text-decoration: none;
-    color: var(--color-primary);
-    background-color: var(--base);
-    padding: 1em;
-    border-radius: 12px;
-    transition: 0.5s ease;
+    margin: .35em 0;
+    padding: 1em .3em;
   }
-  
-  .box__options a:hover {
-    background-color: var(--color-primary);
-    color: var(--base);
-  }
-  
-  .option-red {
-    a:hover {
-      background-color: var(--red) !important;
-    }
-  }
-  
-  .option-green {
-    a:hover {
-      background-color: var(--green) !important;
-    }
-  }
-  
-  .option-blue {
-    a:hover {
-      background-color: var(--blue) !important;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .box {
-      margin: 1em;
-    }
-    .box__options {
-      flex-direction: column;
-      margin: 1em;
-      margin-bottom: 0;
-    }
-  }
-  
+}
